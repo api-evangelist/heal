@@ -1,7 +1,15 @@
 aid: heal
 name: Heal
-description: 'Heal is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Heal (legally Get Heal, Inc.) was a Los Angeles based in-home primary
+  care practice founded in 2014 that delivered on-demand doctor house calls, one-touch
+  telemedicine, telepsychology and remote patient monitoring, aimed largely at Medicare
+  Advantage members. Humana took a $100M stake in the company in July 2020 and then
+  acquired it outright, folding the practice into its CenterWell primary care brand.
+  Heal never ran a public developer program: it published no OpenAPI, no developer
+  portal and no SDKs. As of this profile heal.com issues a 301 redirect to centerwell.com
+  for every path, and the one surviving technical host, api.heal.com, answers every
+  request with a blanket HTTP 401.'
+image: https://avatars.githubusercontent.com/u/40704705?v=4
 url: https://raw.githubusercontent.com/api-evangelist/heal/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +20,14 @@ created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Health
+- Healthcare
+- Telehealth
+- Primary Care
+- Remote Patient Monitoring
+- Medicare
+- Home Health
+- Acquired
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +35,38 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/heal-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/heal_stock/
+  url: https://www.heal.com/
+- type: GitHubOrganization
+  url: https://github.com/getheal
+- type: ParentCompany
+  url: https://www.centerwell.com/
+x-enrichment:
+  date: '2026-08-22'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Heal was fully absorbed into Humana's CenterWell brand and no longer operates as an
+    independent company: every path on heal.com now 301-redirects to centerwell.com, no
+    developer, docs or status host exists (all subdomains resolve on a wildcard into the
+    same redirect), and the one surviving technical host, api.heal.com, is a blanket
+    HTTP 401 gateway that returns the identical 58-byte NOT_AUTHORIZED body for invented
+    paths as for real ones.
+  evidence:
+  - url: https://www.heal.com/
+    status: 301
+  - url: https://api.heal.com/openapi.json
+    status: 401
+  - url: https://api.heal.com/.well-known/agent-card.json
+    status: 401
+  - url: https://www.heal.com/.well-known/security.txt
+    status: 301
+  - url: https://github.com/getheal
+    status: 200
+  checked: '2026-08-22'

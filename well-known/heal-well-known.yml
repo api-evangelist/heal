@@ -1,0 +1,80 @@
+generated: '2026-08-22'
+method: probed
+source: direct HTTP probe of every heal.com host reachable on 2026-08-22
+note: >-
+  ZERO documents served. Both hosts are catch-alls and NEITHER serves a real
+  /.well-known/ surface, so no WellKnown or SecurityTxt pointer is emitted from this
+  file. www.heal.com answers EVERY path — real or invented — with a 301 to
+  https://www.centerwell.com (Humana's CenterWell brand, which absorbed Heal), and
+  api.heal.com answers EVERY path with an identical 58-byte
+  {"description":"Not authorized","status":"NOT_AUTHORIZED"} body. The soft_404_control
+  probes below return byte-for-byte the same responses as the real well-known paths,
+  which is how we know these are blanket handlers and not documents.
+hit_count: 0
+hosts:
+- host: https://www.heal.com
+  note: 301 catch-all into the acquirer's site; no path on this host serves content.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+  soft_404_control:
+    path: /.well-known/definitely-not-a-real-path-9f3a
+    status: 301
+    bytes: 17
+    body: Moved Permanently
+- host: https://api.heal.com
+  note: >-
+    Blanket HTTP 401 gateway. Every path returns the same 58-byte JSON error, including
+    paths that cannot exist. The host is alive but nothing anonymous is readable.
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 401
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 401
+    file: null
+  - path: /.well-known/api-catalog
+    status: 401
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 401
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 401
+    file: null
+  - path: /.well-known/agent.json
+    status: 401
+    file: null
+  soft_404_control:
+    path: /definitely-not-a-real-path-9f3a
+    status: 401
+    bytes: 58
+    body: '{"description":"Not authorized","status":"NOT_AUTHORIZED"}'

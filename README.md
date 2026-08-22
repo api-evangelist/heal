@@ -64,5 +64,17 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Heal is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/heal_stock/
+Heal (legally Get Heal, Inc.) was a Los Angeles based in-home primary care practice founded in 2014 that
+delivered on-demand doctor house calls, one-touch telemedicine, telepsychology and remote patient
+monitoring, aimed largely at Medicare Advantage members. Humana took a $100M stake in July 2020 and later
+acquired the company outright, folding the practice into its CenterWell primary care brand.
+
+**No API surface.** Heal never ran a public developer program — no OpenAPI, no developer portal, no SDKs.
+Probed 2026-08-22:
+
+- `https://www.heal.com/` — **301** to `https://www.centerwell.com` for every path, including invented ones
+- `https://api.heal.com/` — **401** blanket gateway; identical 58-byte `NOT_AUTHORIZED` body on every path
+- `https://github.com/getheal` — **200**, the company's real GitHub org (12 repos, mostly iOS forks, last push 2022)
+
+See `well-known/heal-well-known.yml` for the full probe record and `security/heal-domain-security.yml` for
+the DNS/TLS posture on `heal.com`.
