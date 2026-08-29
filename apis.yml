@@ -9,6 +9,17 @@ description: 'Heal (legally Get Heal, Inc.) was a Los Angeles based in-home prim
   portal and no SDKs. As of this profile heal.com issues a 301 redirect to centerwell.com
   for every path, and the one surviving technical host, api.heal.com, answers every
   request with a blanket HTTP 401.'
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/40704705?v=4
 url: https://raw.githubusercontent.com/api-evangelist/heal/refs/heads/main/apis.yml
 x-type: company
