@@ -20,6 +20,19 @@ deliveryModel:
   - none
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - security
+  - {url: 'https://www.heal.com/', status: 301, note: 'declared website redirects to https://www.centerwell.com/ — a different registrable domain (heal.com -> centerwell.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
+  generated: '2026-09-02'
+  method: derived
 image: https://avatars.githubusercontent.com/u/40704705?v=4
 url: https://raw.githubusercontent.com/api-evangelist/heal/refs/heads/main/apis.yml
 x-type: company
