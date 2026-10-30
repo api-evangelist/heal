@@ -64,17 +64,80 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Heal (legally Get Heal, Inc.) was a Los Angeles based in-home primary care practice founded in 2014 that
-delivered on-demand doctor house calls, one-touch telemedicine, telepsychology and remote patient
-monitoring, aimed largely at Medicare Advantage members. Humana took a $100M stake in July 2020 and later
-acquired the company outright, folding the practice into its CenterWell primary care brand.
+Heal (legally Get Heal, Inc.) was a Los Angeles based in-home primary care practice founded in 2014 that delivered on-demand doctor house calls, one-touch telemedicine, telepsychology and remote patient monitoring, aimed largely at Medicare Advantage members. Humana took a $100M stake in the company in July 2020 and then acquired it outright, folding the practice into its CenterWell primary care brand. Heal never ran a public developer program: it published no OpenAPI, no developer portal and no SDKs. As of this profile heal.com issues a 301 redirect to centerwell.com for every path, and the one surviving technical host, api.heal.com, answers every request with a blanket HTTP 401.
 
-**No API surface.** Heal never ran a public developer program — no OpenAPI, no developer portal, no SDKs.
-Probed 2026-08-22:
+**Areas:** Company · Health · Healthcare · Telehealth · Primary Care · Remote Patient Monitoring · Medicare · Home Health · Acquired
 
-- `https://www.heal.com/` — **301** to `https://www.centerwell.com` for every path, including invented ones
-- `https://api.heal.com/` — **401** blanket gateway; identical 58-byte `NOT_AUTHORIZED` body on every path
-- `https://github.com/getheal` — **200**, the company's real GitHub org (12 repos, mostly iOS forks, last push 2022)
+## Heal on APIs.io
 
-See `well-known/heal-well-known.yml` for the full probe record and `security/heal-domain-security.yml` for
-the DNS/TLS posture on `heal.com`.
+Everything profiled for Heal is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/heal/](https://apis.io/providers/heal/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Heal Domain Security](https://apis.io/security/heal/heal-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.heal.com/)
+- [GitHub](https://github.com/getheal)
+
+## API Evangelist rating
+
+**Kin Score 4.0** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 0.0 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 4.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/heal/](https://apis.io/providers/heal/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Heal: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/heal/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
